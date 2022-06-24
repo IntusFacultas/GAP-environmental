@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title><%= site.title %></title>
+  <link rel="stylesheet" href="/css/universal/styles.css?v=<%= site.version %>">
+  <link rel="stylesheet" href="/css/universal/navbar.css?v=<%= site.version %>">
+  <link defer rel="stylesheet" href="/css/universal/footer.css?v=<%= site.version %>">
+  <link rel="stylesheet" href="/css/universal/text.css?v=<%= site.version %>">
+  <link rel="stylesheet" href="/css/universal/buttons.css?v=<%= site.version %>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link rel="icon" href="/images/universal/favicon.ico" type="image/x-icon" />
+
+  <meta content="GaP Advisors is a Houston M&amp;A firm serving business owners through representation for Mergers &amp; Acquisitions (M&amp;A) along with services for Fractional CFO, Advisory Board, Executive Coaching, and Consulting." name="description"/>
+  <meta content="Mergers and Acquisition Houston | GaP Advisors" property="og:title"/>
+  <meta content="GaP Advisors is a Houston M&amp;A firm serving business owners through representation for Mergers &amp; Acquisitions (M&amp;A) along with services for Fractional CFO, Advisory Board, Executive Coaching, and Consulting." property="og:description"/>
+  <meta content="/images/universal/gap.webp" property="og:image"/>
+  <meta content="Mergers and Acquisition Houston | GaP Advisors" property="twitter:title"/>
+  <meta content="GaP Advisors is a Houston M&amp;A firm serving business owners through representation for Mergers &amp; Acquisitions (M&amp;A) along with services for Fractional CFO, Advisory Board, Executive Coaching, and Consulting." property="twitter:description"/>
+  <meta content="/images/universal/gap.webp" property="twitter:image"/>
+  <meta property="og:type" content="website"/>
+  <meta content="summary_large_image" name="twitter:card"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="pageLayout">
+    <%- include('partials/navbar') %>
+    
+    <div class="content">
+      <%- body %>
+    </div>
+  
+    <%- include('partials/footer') %>
+  </div>
+</body>
+  <script src="/scripts/navbar.js"></script>
+  <script defer src="/scripts/footer.js"></script>
+</html>

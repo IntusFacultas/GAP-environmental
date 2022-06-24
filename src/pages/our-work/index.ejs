@@ -1,0 +1,10 @@
+<link rel="stylesheet" href="/css/our-work/style.css?v=<%= site.version %>">
+<% site.industries.forEach(function(industry, index) { %>
+  <link rel="preload" as="image" href="<%= industry.img %>">
+<% }) %>
+<%- include('/partials/our-work/aboveTheFold') %>
+<%- include('/partials/our-work/WorkSampling') %>
+<%- include('/partials/our-work/whatOthersAreSaying') %>
+<%- include('/partials/secondaryCTASection') %>
+
+<script src="/scripts/ourWork.js?v=<%= site.version %>"></script>

@@ -1,0 +1,11 @@
+<div class="aboveTheFold">
+  <h1 class="red-text">Industries Served</h1>
+  <div class="aboveTheFold__industries">
+    <% site.industries.forEach(function(industry, index) { %>
+      <figure class="aboveTheFold__industries__industry" style="animation-delay: <%= index * 5 / 100 %>s;">
+        <img src="<%= industry.img %>" alt="Photo of <%= industry.text %>">
+        <figcaption><%= industry.text %></figcaption>
+      </figure>
+    <% }) %>
+  </div>
+</div>

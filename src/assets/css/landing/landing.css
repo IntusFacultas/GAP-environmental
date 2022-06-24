@@ -1,0 +1,572 @@
+* {
+  font-family: 'Raleway', sans-serif;
+}
+
+.red-text {
+  color: #A91E24;
+}
+
+mark {
+  background: none;
+}
+
+h1 mark.red-text {
+  display: inline;
+}
+
+h2 mark.red-text, h3 mark.red-text, h4 mark.red-text, h5 mark.red-text, h6 mark.red-text, p mark.red-text, li mark.red-text {
+  display: inline;
+}
+
+li p {
+  margin: 0;
+}
+
+.aboveTheFold {
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+@media screen and (min-width: 1079px) {
+  .aboveTheFold {
+    background-image: url(/images/landing/gridcircles.svg);
+    background-repeat: no-repeat;
+    background-position: bottom 1em right 1em;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .aboveTheFold {
+    padding-top: 4em;
+    padding-bottom: 4em;
+    min-height: 268px;
+  }
+}
+
+.aboveTheFold__text {
+  padding: 1em;
+  margin-right: 1em;
+  z-index: 1;
+}
+
+.aboveTheFold__text h1 {
+  max-width: 904px;
+  font-size: 3em;
+  margin-bottom: .5em;
+}
+
+@media screen and (max-width: 1130px) {
+  .aboveTheFold__text h1 {
+    font-size: 2.5em;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .aboveTheFold__text h1 {
+    font-size: 2.25em;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .aboveTheFold__text h1 {
+    font-size: 2em;
+  }
+}
+
+.aboveTheFold__decorativeChevron {
+  max-width: 200px;
+  -webkit-clip-path: polygon(0 0, 100% 50%, 0 100%);
+          clip-path: polygon(0 0, 100% 50%, 0 100%);
+  width: 100%;
+  background-color: #A91E24;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 2;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation: AboveTheFoldChevron .3s ease-out;
+          animation: AboveTheFoldChevron .3s ease-out;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.aboveTheFold__decorativeChevron img {
+  height: 80px;
+  width: 114px;
+  margin-left: -2em;
+}
+
+@media screen and (max-width: 730px) {
+  .aboveTheFold__decorativeChevron {
+    max-width: 150px;
+  }
+  .aboveTheFold__decorativeChevron img {
+    height: 60px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .aboveTheFold__decorativeChevron {
+    max-width: 100px;
+  }
+  .aboveTheFold__decorativeChevron img {
+    height: 40px;
+    margin-left: -1em;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .aboveTheFold__decorativeChevron {
+    display: none;
+  }
+}
+
+.aboveTheFold__backgroundImage {
+  max-width: 50%;
+  width: 100%;
+}
+
+@media screen and (max-width: 568px) {
+  .aboveTheFold__backgroundImage {
+    height: 268px;
+    max-width: unset;
+    width: initial;
+    opacity: 0.2;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+  }
+}
+
+.cards {
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-top: 1.5em solid #A91E24;
+  padding: 1em;
+  background-image: url(/images/landing/gridcircles.svg), url(/images/landing/Intersection.svg);
+  background-repeat: no-repeat;
+  background-position: bottom 1em right 1em, left -10em center;
+}
+
+.cards h2 {
+  font-size: 2em;
+}
+
+.cards__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 1em;
+  margin-bottom: 4em;
+}
+
+.cards__container__card {
+  -webkit-transition: -webkit-transform .3s ease-out;
+  transition: -webkit-transform .3s ease-out;
+  transition: transform .3s ease-out;
+  transition: transform .3s ease-out, -webkit-transform .3s ease-out;
+  border-radius: 3px;
+  width: 350px;
+  height: 415px;
+  margin: .5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: white;
+  -webkit-box-shadow: 0px 2px 4px 1px rgba(8, 1, 128, 0.6);
+          box-shadow: 0px 2px 4px 1px rgba(8, 1, 128, 0.6);
+}
+
+.cards__container__card:nth-of-type(2) {
+  -webkit-animation-delay: .1s;
+          animation-delay: .1s;
+}
+
+.cards__container__card:nth-of-type(3) {
+  -webkit-animation-delay: .2s;
+          animation-delay: .2s;
+}
+
+.cards__container__card:nth-of-type(4) {
+  -webkit-animation-delay: .3s;
+          animation-delay: .3s;
+}
+
+.cards__container__card:nth-of-type(5) {
+  -webkit-animation-delay: .4s;
+          animation-delay: .4s;
+}
+
+.cards__container__card__text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  padding: .5em;
+  font-size: 1.25em;
+  font-weight: bold;
+  font-family: 'Raleway', sans-serif;
+  height: 84px;
+}
+
+.cards__container__card__text p {
+  margin: 0;
+}
+
+.cards__container__card__image {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  border-radius: 0 0 3px 3px;
+  background-repeat: no-repeat;
+}
+
+.cards__container__card__image--fairMarket {
+  background-image: url(/images/landing/money.webp);
+  background-size: 700px 469px;
+  background-position-x: -124px;
+}
+
+.cards__container__card__image--confidentiality {
+  background-image: url(/images/landing/security.webp);
+  background-size: 600px 337px;
+  background-position-x: -121px;
+}
+
+.cards__container__card__image--employees {
+  background-size: 600px 450px;
+  background-position: -7em -6em;
+  background-image: url(/images/landing/employees.webp);
+}
+
+.cards__container__card__image--legacy {
+  background-image: url(/images/landing/children.webp);
+  background-size: 600px 400px;
+}
+
+.cards__container__card__image--terms {
+  background-image: url(/images/landing/terms.webp);
+  background-size: 400px 600px;
+  background-position: -3em -6em;
+}
+
+.cards__transactionAdviser {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 2em 1em 2em 1em;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 2em 1em;
+}
+
+.cards__transactionAdviser__imageContainer {
+  min-width: 300px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  position: relative;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.cards__transactionAdviser__imageContainer img {
+  z-index: 1;
+  max-width: 100%;
+  position: relative;
+}
+
+.cards__transactionAdviser__imageContainer picture {
+  position: relative;
+}
+
+.cards__transactionAdviser__imageContainer picture::before {
+  position: absolute;
+  content: ' ';
+  right: -.75em;
+  top: .5em;
+  bottom: -.5em;
+  left: .5em;
+  background-color: #A91E24;
+}
+
+.cards__transactionAdviser__text {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: 2em;
+  text-align: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-width: 350px;
+  font-weight: bold;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.25em;
+}
+
+.cards__transactionAdviser__text ul {
+  margin: 0;
+  list-style: none;
+}
+
+.cards__transactionAdviser__text ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.cards__transactionAdviser__text ul li::before {
+  font-size: 2.5em;
+  content: "\2022";
+  color: #A91E24;
+  font-weight: bold;
+  display: inline-block;
+  width: .5em;
+  margin-left: -0.5em;
+  position: absolute;
+  top: -18px;
+  left: 0;
+}
+
+.howWeCanHelp {
+  background-color: white;
+  border-top: 1.5em solid #080180;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+}
+
+@media screen and (min-width: 1000px) {
+  .howWeCanHelp {
+    background-image: url(/images/landing/gridcircles.svg), url(/images/landing/Group66.svg);
+    background-repeat: no-repeat;
+    background-position: bottom 1em right 1em, bottom left 10em;
+  }
+}
+
+@media screen and (max-width: 999px) {
+  .howWeCanHelp {
+    background-image: url(/images/landing/gridcircles.svg);
+    background-repeat: no-repeat;
+    background-position: bottom 1em right 1em;
+  }
+}
+
+.howWeCanHelp h2 {
+  font-size: 2em;
+}
+
+.howWeCanHelp__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-bottom: 14em;
+  max-width: 100%;
+  padding: 2em;
+}
+
+.howWeCanHelp__container__imageContainer {
+  min-width: 300px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  position: relative;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.howWeCanHelp__container__imageContainer img {
+  z-index: 1;
+  max-width: 100%;
+  position: relative;
+}
+
+.howWeCanHelp__container__imageContainer picture {
+  position: relative;
+}
+
+.howWeCanHelp__container__imageContainer picture::before {
+  position: absolute;
+  content: ' ';
+  right: -.75em;
+  top: .5em;
+  bottom: -.5em;
+  left: .5em;
+  background-color: #080180;
+}
+
+.howWeCanHelp__container__text {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: 2em;
+  text-align: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-width: 350px;
+  font-weight: bold;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.25em;
+}
+
+.howWeCanHelp__container__text ul {
+  margin: 0;
+  list-style: none;
+}
+
+.howWeCanHelp__container__text ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.howWeCanHelp__container__text ul li::before {
+  font-size: 2.5em;
+  content: "\2022";
+  color: #A91E24;
+  font-weight: bold;
+  display: inline-block;
+  width: .5em;
+  margin-left: -0.5em;
+  position: absolute;
+  top: -18px;
+  left: 0;
+}
+
+@-webkit-keyframes CardUnfold {
+  from {
+    -webkit-transform: rotate3d(0, 1, 0, 89deg);
+            transform: rotate3d(0, 1, 0, 89deg);
+  }
+  to {
+    -webkit-transform: rotate3d(0, 0, 0, 0deg);
+            transform: rotate3d(0, 0, 0, 0deg);
+  }
+}
+
+@keyframes CardUnfold {
+  from {
+    -webkit-transform: rotate3d(0, 1, 0, 89deg);
+            transform: rotate3d(0, 1, 0, 89deg);
+  }
+  to {
+    -webkit-transform: rotate3d(0, 0, 0, 0deg);
+            transform: rotate3d(0, 0, 0, 0deg);
+  }
+}
+
+@-webkit-keyframes AboveTheFoldChevron {
+  from {
+    -webkit-transform: translate(-100%);
+            transform: translate(-100%);
+  }
+  to {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+}
+
+@keyframes AboveTheFoldChevron {
+  from {
+    -webkit-transform: translate(-100%);
+            transform: translate(-100%);
+  }
+  to {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+}
+/*# sourceMappingURL=landing.css.map */

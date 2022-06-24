@@ -1,0 +1,35 @@
+@import './text';
+
+@mixin underlined-link($underlinecolor: white) {
+  margin-bottom: .5em;
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  &::after {
+    content: ' ';
+    background-color: $underlinecolor;
+    transition: width .15s ease-out;
+    width: 0px;
+    height: 2px;
+    margin: 0 auto;
+    display: inline-block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }
+  &:hover {
+    &::after {
+      width: 100%;
+    }
+  }
+}
+
+
+@mixin white-link {
+  @include bolded-text;
+  @include underlined-link;
+  color: white;
+  &:visited {
+    color: white;
+  }
+}

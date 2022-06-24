@@ -1,0 +1,17 @@
+<div class="workSampling">
+  <h1 class="red-text">A Sampling Of Our Work</h1>
+  <div class="workSampling__works">
+    <% site.works.forEach(function(work) { %>
+      <a class="workSampling__works__work" href="<%= work.link %>" target="_blank">
+        <figure>
+          <div class="animatedImage">
+            <img src="<%= work.seller.img %>" alt="Photo of <%= work.seller.companyName %> Logo">
+            <img src="<%= work.buyer.img %>" alt="Photo of <%= work.buyer.companyName %> Logo">
+          </div>
+          <figcaption><%= work.year %></figcaption>
+          <figcaption><%= work.text %></figcaption>
+        </figure>
+      </a>
+    <% }) %>
+  </div>
+</div>

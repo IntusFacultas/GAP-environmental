@@ -1,0 +1,57 @@
+.primaryCTA {
+  -webkit-transition: background-color .3s ease-out;
+  transition: background-color .3s ease-out;
+  border: 0;
+  border-radius: 3px;
+  padding: .25em .5em;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  background-color: #080180;
+  font-size: 2em;
+}
+
+.primaryCTA:visited {
+  color: white;
+}
+
+.primaryCTA:hover {
+  background-color: #05014d;
+}
+
+@media screen and (max-width: 1585px) {
+  .primaryCTA {
+    font-size: 1.5em;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .primaryCTA {
+    font-size: 1.2em;
+  }
+}
+
+.secondaryCTA {
+  -webkit-transition: background-color .3s ease-out;
+  transition: background-color .3s ease-out;
+  border: 0;
+  border-radius: 3px;
+  padding: .25em .5em;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  background-color: #A91E24;
+  color: white;
+  font-size: 1.5em;
+}
+
+.secondaryCTA:visited {
+  color: white;
+}
+
+.secondaryCTA:hover {
+  background-color: #7e161b;
+}
+/*# sourceMappingURL=buttons.css.map */

@@ -1,0 +1,17 @@
+<div class="subtitle">
+  <h2 class="red-text">Meet Our Leadership Team</h2>
+</div>
+<div class="team">
+  <% site.employees.forEach(function(employee) { %>
+    <div class="team__card">
+      <figure>
+        <a href="<%= employee.link %>" target="_blank" aria-label="Get to know <%= employee.name %>">
+          <img src="<%= employee.img %>" alt="Photograph of <% employee.name %>">
+        </a>
+        <figcaption class="red-text"><%= employee.name %></figcaption>
+        <figcaption><% employee.title %></figcaption>
+      </figure>
+      <a href="<%= employee.link %>" target="_blank" class="team__card__link">Get to know <%= employee.firstName %></a>
+    </div>
+  <% }) %>
+</div>

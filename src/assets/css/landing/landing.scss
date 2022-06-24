@@ -1,0 +1,341 @@
+@import '../universal/colors';
+@import '../universal/elevation';
+@import '../universal/text';
+
+$minimumScreenWidth: 568px;
+$aboveTheFoldMobileHeight: 268px;
+
+@mixin backgroundDots {
+  background-image: url(/images/landing/gridcircles.svg);
+  background-repeat: no-repeat;
+  background-position: bottom 1em right 1em;
+}
+
+@mixin bicolumnImage($color: $gap-red) {
+    min-width: 300px;
+    flex: 1;
+    position: relative;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    img {
+      z-index: 1;
+      max-width: 100%;
+      position: relative;
+    }
+
+    picture{
+      position: relative;
+      &::before {
+        position: absolute;
+        content: ' ';
+        right: -.75em;
+        top: .5em;
+        bottom: -.5em;
+        left: .5em;
+        background-color:  $color;
+      }
+    }
+}
+
+@mixin bicolumnText {
+  flex: 1;
+  padding: 2em;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 350px;
+  @include bolded-text;
+  font-size: 1.25em;
+  ul {
+    margin: 0;
+    list-style: none;
+    li {
+      display: flex;
+      align-items: center;
+      position: relative;
+      &::before {
+        font-size: 2.5em;
+        content: "\2022"; 
+        color: $gap-red;
+        font-weight: bold;
+        display: inline-block;
+        width: .5em;
+        margin-left: -0.5em;
+
+        position: absolute;
+        top: -18px;
+        left: 0; 
+      }
+    }
+  }
+}
+
+.aboveTheFold {
+  background-color:white;
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  // circles are far too distracting on small screens
+  @media screen and (min-width: 1079px) {
+    @include backgroundDots;
+  }
+
+  // since we position absolute the background image,
+  // we can't rely on it to define the height at this
+  // break point, so we manually set the height.
+  @media screen and (max-width: $minimumScreenWidth) {
+    // on mobile the navbar tends to clip into the above the fold
+    // so we're just buying some padding here
+    padding-top: 4em;
+    padding-bottom: 4em;
+    min-height: $aboveTheFoldMobileHeight;
+  }
+
+
+  &__text {
+    padding: 1em;
+    margin-right: 1em;
+    z-index: 1;
+    h1 {
+      max-width: 904px;
+      font-size: 3em;
+      margin-bottom: .5em;
+      @media screen and (max-width: 1130px){
+        font-size: 2.5em;
+      }
+      @media screen and (max-width: 900px){
+        font-size: 2.25em;
+      }
+      @media screen and (max-width: 750px){
+        font-size: 2em;
+      }
+    }
+  }
+
+  &__decorativeChevron {
+    max-width: 200px;
+    clip-path: polygon(0 0, 100% 50%, 0 100%);
+    width: 100%;
+    background-color: $gap-red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: $aboveTheFoldChevron;
+    animation-fill-mode: forwards;
+    animation: AboveTheFoldChevron .3s ease-out;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    img {
+      height: 80px;
+      width: 114px;
+      margin-left: -2em;
+    }
+    @media screen and (max-width: 730px) {
+      max-width: 150px;
+      img {
+        height: 60px
+      }
+    }
+    @media screen and (max-width: 600px) {
+      max-width: 100px;
+      img {
+        height: 40px;
+        margin-left: -1em;
+      }
+    }
+
+    // chevron takes up too much space on mobile screens
+    @media screen and (max-width: $minimumScreenWidth) {
+      display: none;
+    }
+  }
+
+  &__backgroundImage {
+    max-width: 50%;
+    width: 100%;
+
+    // while having it take up half the container makes sense
+    // on larger browsers, the same can't be said for 
+    // mobile screens, so we position absolute it to put it behind the text.
+    @media screen and (max-width: $minimumScreenWidth) {
+      height: $aboveTheFoldMobileHeight;
+      max-width: unset;
+      width: initial;
+      opacity: 0.2;
+      position: absolute;
+      // bottom instead of top here because the padding for the aboveTheFold pushes the text down and we want this behind the text
+      bottom: 0;
+      left: 0;
+      z-index: 0;
+      
+    }
+  }
+}
+
+.cards {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  border-top: 1.5em solid $gap-red;
+  padding: 1em;
+  h2 {
+    font-size: 2em;
+  }
+
+  background-image: url(/images/landing/gridcircles.svg), url(/images/landing/Intersection.svg);
+  background-repeat: no-repeat;
+  background-position: bottom 1em right 1em, left -10em center;
+
+
+  &__container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 1em;
+    margin-bottom: 4em;
+    &__card {
+      transition: transform .3s ease-out;
+      border-radius: 3px;
+      width: 350px;
+      height: 415px;
+      // @media screen and (min-width:450px) {
+      //   // this animation does not play smoothly on mobile
+      //   transform: rotate3d(0,1,0, 89deg);
+      // }
+      margin: .5em;
+      display: flex;
+      flex-direction: column;
+      background-color: white;
+      &:nth-of-type(2) {
+        animation-delay: .1s;
+      }
+      &:nth-of-type(3) {
+        animation-delay: .2s;
+      }
+      &:nth-of-type(4) {
+        animation-delay: .3s;
+      }
+      &:nth-of-type(5) {
+        animation-delay: .4s;
+      }
+      // &--animated {
+      //   @media screen and (min-width: 450px) {
+      //     animation: CardUnfold .3s forwards;
+      //   }
+      // }
+      &__text {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: .5em;
+        font-size: 1.25em;
+        @include bolded-text;
+        height: 84px;
+        p {
+          margin: 0;
+        }
+      }
+      box-shadow: 0px 2px 4px 1px transparentize($gap-dark-blue, 0.4);
+      &__image {
+        flex: 1;
+        border-radius: 0 0 3px 3px;
+        background-repeat: no-repeat;
+        &--fairMarket {
+          background-image: url(/images/landing/money.webp);
+          background-size: 700px 469px;
+          background-position-x: -124px;
+        }
+        &--confidentiality {
+          background-image: url(/images/landing/security.webp);
+          background-size: 600px 337px;
+          background-position-x: -121px;
+        }
+        &--employees {
+          background-size: 600px 450px;
+          background-position: -7em -6em;
+          background-image: url(/images/landing/employees.webp);
+        }
+        &--legacy {
+          background-image: url(/images/landing/children.webp);
+          background-size: 600px 400px;
+        }
+        &--terms {
+          background-image: url(/images/landing/terms.webp);
+          background-size: 400px 600px;
+          background-position: -3em -6em;
+        }
+      }
+    }
+  }
+  &__transactionAdviser {
+    display: flex;
+    margin: 2em 1em 2em 1em;
+    flex-wrap: wrap;
+    padding: 2em 1em;
+    &__imageContainer {
+      @include bicolumnImage;
+    }
+    &__text {
+      @include bicolumnText;  
+    }
+  }
+}
+
+.howWeCanHelp {
+  background-color: white;
+  border-top: 1.5em solid $gap-dark-blue;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  @media screen and (min-width: 1000px) {
+    background-image: url(/images/landing/gridcircles.svg), url(/images/landing/Group66.svg);
+    background-repeat: no-repeat;
+    background-position: bottom 1em right 1em, bottom left 10em;
+  }
+  @media screen and (max-width: 999px) {
+    @include backgroundDots();
+  }
+  h2 {
+    font-size: 2em;
+  }
+  &__container {
+    display: flex; 
+    flex-wrap: wrap;
+    margin-bottom: 14em;
+    max-width: 100%;
+    padding: 2em;
+    &__imageContainer {
+      @include bicolumnImage($gap-dark-blue);
+    }
+    &__text {
+      @include bicolumnText;
+    }
+  }
+}
+
+@keyframes CardUnfold {
+  from {
+    transform: rotate3d(0,1,0, 89deg);
+  }
+  to {
+    transform: rotate3d((0,0,0, 0deg));
+  }
+}
+@keyframes AboveTheFoldChevron {
+  from {
+    transform: translate(-100%);
+  }
+  to {
+    transform: translate(0);
+  }
+}

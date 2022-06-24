@@ -1,0 +1,159 @@
+@import '../universal/text';
+@import '../universal/colors';
+
+@mixin commonStyling {
+  h1 {
+    font-size: 3em;
+  }
+  padding: 2em;
+  background-size: 200px;
+  max-width: 1280px;
+  margin: 0 auto;
+  .red-text {
+    white-space: initial !important;
+  }
+}
+
+@mixin commonContainerStyling {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@mixin commonCardStyling {
+  text-decoration: none;
+  transition: background-color .3s ease-out;
+  background-color: white;
+  &:hover {
+    background-color: darken(white, 2%);
+  }
+  margin: .5em;
+  border: 1px solid $gap-blue;
+  box-shadow: 0px 4px 4px 2px transparentize($gap-dark-blue, 0.8);
+  border-radius: 3px;
+  @include bolded-text;
+  color: black;
+  figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 300px;
+    figcaption {
+      max-width: 250px;
+    }
+    img {
+      height: 150px;
+      width: 150px;
+      clip-path: circle(70px);
+    }
+  }
+}
+.aboveTheFold {
+  
+  background-image: url(/images/our-work/bubbles.svg);
+  background-position: right top;
+  background-repeat: no-repeat;
+  @include commonStyling();
+
+  &__industries {
+    @include commonContainerStyling;
+    &__industry {
+      max-width: 150px;
+      transform: translateY(-20px);
+      animation: SlideDown .3s forwards;
+      img {
+        height: 150px;
+        width: 150px;
+        clip-path: circle(74px);
+        background-color: #434343;
+      }
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  }
+}
+
+.workSampling {
+  @include commonStyling();
+  &__works {
+    margin-top: 1em;
+    @include commonContainerStyling();
+    &__work {
+      @include commonCardStyling()
+    }
+  }
+}
+
+.whatOthersAreSaying {
+  @include commonStyling();
+  &__awards {
+    background-image: url(/images/footer/GhostLogo.svg);
+    margin-top: 1em;
+    @include commonContainerStyling();
+    &__award {
+      @include commonCardStyling();
+    }
+  }
+}
+@keyframes SlideDown {
+ from {
+  transform: translateY(-20px);
+ } 
+ to {
+   transform: translateY(0px);
+ }
+}
+
+.animatedImage {
+  position: relative;
+  height: 150px;
+  width: 150px;
+  img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    &:nth-of-type(1) {
+      
+      // scale because when the underlying color of the under image is not the same color as the above, we get
+      // some terrible aliasing at the edge, so we scale to hide it.
+      transform: scale(0.98);
+    }
+    &:nth-of-type(2) {
+      opacity: 0;
+      animation-duration: 8s;
+      z-index: 1;
+      animation-delay: .5s;
+      animation-iteration-count: infinite;
+    }
+  }
+  &--animated {
+    img {
+      &:nth-of-type(2) {
+        animation-name: FadeInOut;
+      }
+    }
+  }
+}
+
+@keyframes FadeInOut {
+  0% {
+    opacity: 0;
+  }
+  15% {
+    opacity: 100%;
+  }
+  60% {
+    opacity: 100%;
+  }
+  75% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 0%;
+  }
+}

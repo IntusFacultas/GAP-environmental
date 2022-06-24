@@ -1,0 +1,31 @@
+@import '../universal/breakpoints';
+@mixin backgroundImage {
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  background-color: rgb(163, 163, 163);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  background-position: center;
+  @media screen and (max-width: $mobileBreakpoint) {
+    // since mobile parallax photos don't work...
+    background-attachment: scroll;
+  }
+}
+
+.backgroundImage1 {
+  @include backgroundImage();
+  background-image: url(/images/landing/backgroundImage1.webp);
+  aspect-ratio: auto 2000 / 1333;
+  height: 600px;
+  width: 100%;
+}
+.backgroundImage2 {
+  @include backgroundImage();
+  background-image: url(/images/landing/backgroundImage2.webp);
+  aspect-ratio: auto 400 / 267;
+  height: 600px;
+  width: 100%;
+}

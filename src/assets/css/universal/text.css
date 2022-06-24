@@ -1,0 +1,24 @@
+* {
+  font-family: 'Raleway', sans-serif;
+}
+
+.red-text {
+  color: #A91E24;
+}
+
+mark {
+  background: none;
+}
+
+h1 mark.red-text {
+  display: inline;
+}
+
+h2 mark.red-text, h3 mark.red-text, h4 mark.red-text, h5 mark.red-text, h6 mark.red-text, p mark.red-text, li mark.red-text {
+  display: inline;
+}
+
+li p {
+  margin: 0;
+}
+/*# sourceMappingURL=text.css.map */

@@ -1,0 +1,14 @@
+<div class="whatOthersAreSaying">
+  <h1 class="red-text">What Others Are Saying About GaP</h1>
+  <div class="whatOthersAreSaying__awards">
+    <% site.awards.forEach(function(award) { %>
+      <a class="whatOthersAreSaying__awards__award" href="<%= award.link %>" target="_blank">
+        <figure>
+          <img src="<%= award.img %>" alt="Photo of <%= award.text %>">
+          <figcaption><%= award.year %></figcaption>
+          <figcaption><%= award.text %></figcaption>
+        </figure>
+      </a>
+    <% }) %>
+  </div>
+</div>

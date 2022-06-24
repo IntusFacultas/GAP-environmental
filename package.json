@@ -1,0 +1,25 @@
+{
+  "name": "environmental",
+  "version": "1.0.0",
+  "description": "",
+  "main": "site.config.js",
+  "scripts": {
+    "start": "nanogen start",
+    "prebuild": "nanogen build",
+    "build": "node ./build.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@node-minify/babel-minify": "^6.2.0",
+    "@node-minify/clean-css": "^6.2.0",
+    "@node-minify/core": "^6.2.0",
+    "@node-minify/html-minifier": "^6.2.0",
+    "@node-minify/uglify-js": "^6.2.0",
+    "chalk": "^5.0.1"
+  },
+  "dependencies": {
+    "nanogen": "git+https://github.com/IntusFacultas/nanogen.git"
+  }
+}

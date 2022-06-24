@@ -1,0 +1,42 @@
+.backgroundImage1 {
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  background-color: #a3a3a3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  background-position: center;
+  background-image: url(/images/landing/backgroundImage1.webp);
+  aspect-ratio: auto 2000 / 1333;
+  height: 600px;
+  width: 100%;
+}
+
+@media screen and (max-width: 450px) {
+  .backgroundImage1 {
+    background-attachment: scroll;
+  }
+}
+
+.backgroundImage2 {
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  background-color: #a3a3a3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  background-position: center;
+  background-image: url(/images/landing/backgroundImage2.webp);
+  aspect-ratio: auto 400 / 267;
+  height: 600px;
+  width: 100%;
+}
+
+@media screen and (max-width: 450px) {
+  .backgroundImage2 {
+    background-attachment: scroll;
+  }
+}
+/*# sourceMappingURL=backgroundImages.css.map */

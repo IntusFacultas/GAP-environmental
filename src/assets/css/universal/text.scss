@@ -1,0 +1,39 @@
+@import './colors';
+
+@mixin default-text {
+  font-family: 'Raleway', sans-serif;
+}
+@mixin bolded-text {
+  font-weight: bold;
+  @include default-text;
+}
+
+* {
+  @include default-text;
+}
+
+.red-text {
+  color: $gap-red;
+}
+mark {
+  background: none;
+}
+
+
+h1 {
+  mark.red-text {
+    display: inline;
+  }
+}
+
+
+h2,h3,h4,h5,h6,p,li {
+  mark.red-text {
+    display: inline;
+  }
+}
+li {
+  p {
+    margin: 0;
+  }
+}
