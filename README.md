@@ -14,7 +14,7 @@ and open a terminal like Command Prompt in Windows, or Terminal in MacOS (be sur
 Navigate to the directory where you've saved the source code (example, if you've saved the file to Downloads, you might run:)
 
 ```sh
-cd /u/Users/<username>/Downloads/construction
+cd /u/Users/<username>/Downloads/environmental
 ```
 
 and install all the dependencies for the project by running this command in the terminal:
