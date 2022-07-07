@@ -35,6 +35,12 @@ module.exports = [
     img: '/images/awards/2022ACG.webp',
     link: 'https://www.gap-advisors.com/news/a-gap-facilitated-transaction-once-again-chosen-as-an-acg-houston-deal-of-the-year-finalist',
   },
+  {
+    year: '2022',
+    text: '2022 BBB Torch Award for Ethics Runner-Up',
+    img: '/images/awards/2022BBB.webp',
+    link: 'https://www.gap-advisors.com/news/gilbert-pardue-runner-up-in-2022-bbb-torch-award-for-ethics',
+  },
   // add new awards below this line
 
   // add new awards above this line

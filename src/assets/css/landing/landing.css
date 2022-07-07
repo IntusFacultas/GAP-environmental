@@ -365,7 +365,7 @@ li p {
 }
 
 .cards__transactionAdviser__text ul {
-  margin: 0;
+  margin-bottom: 2em;
   list-style: none;
 }
 
@@ -434,7 +434,6 @@ li p {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin-bottom: 14em;
   max-width: 100%;
   padding: 2em;
 }
@@ -499,7 +498,7 @@ li p {
 }
 
 .howWeCanHelp__container__text ul {
-  margin: 0;
+  margin-bottom: 4em;
   list-style: none;
 }
 

@@ -38,7 +38,7 @@ $aboveTheFoldMobileHeight: 268px;
     }
 }
 
-@mixin bicolumnText {
+@mixin bicolumnText($bottomAdjustment: 0em) {
   flex: 1;
   padding: 2em;
   text-align: left;
@@ -49,7 +49,7 @@ $aboveTheFoldMobileHeight: 268px;
   @include bolded-text;
   font-size: 1.25em;
   ul {
-    margin: 0;
+    margin-bottom: 4em - $bottomAdjustment;
     list-style: none;
     li {
       display: flex;
@@ -177,6 +177,7 @@ $aboveTheFoldMobileHeight: 268px;
   }
 }
 
+
 .cards {
   background-color: white;
   display: flex;
@@ -285,7 +286,7 @@ $aboveTheFoldMobileHeight: 268px;
       @include bicolumnImage;
     }
     &__text {
-      @include bicolumnText;  
+      @include bicolumnText(2em);  
     }
   }
 }
@@ -311,7 +312,6 @@ $aboveTheFoldMobileHeight: 268px;
   &__container {
     display: flex; 
     flex-wrap: wrap;
-    margin-bottom: 14em;
     max-width: 100%;
     padding: 2em;
     &__imageContainer {
